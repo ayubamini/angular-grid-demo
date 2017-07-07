@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand" href="#">Angular Grid Sample</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a routerLink="/smarttable" routerLinkActive="active">SmartTable</a></li>
+                <li><a routerLink="/ngx-dt" routerLinkActive="active">ngx-datatable</a></li>
+                <li><a routerLink="/angular-dt" routerLinkActive="active">angular-datatable</a></li>
+                <button class="btn btn-danger navbar-btn">Button</button>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div class="container">
+
+    <router-outlet></router-outlet>
+
+</div>
