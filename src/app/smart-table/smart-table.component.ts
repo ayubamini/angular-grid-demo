@@ -12,20 +12,43 @@ export class SmartTableComponent {
     title = 'Smart Table Demo';
 
     settings = {
+        mode: 'Inline',
         columns: {
             id: {
-                title: 'ID'
+                title: 'شناسه'
             },
             name: {
-                title: 'Full Name'
+                title: 'نام و نام خانوادگی'
             },
             username: {
-                title: 'User Name'
+                title: 'نام کاربری'
             },
             email: {
-                title: 'Email'
+                title: 'ایمیل'
             }
-        }
+        },
+        add: {
+            addButtonContent: "افزودن رکورد",
+            createButtonContent: "افزودن",
+            cancelButtonContent: "انصراف"
+        },
+        delete: {
+            deleteButtonContent: "حذف"
+        },
+        edit: {
+            editButtonContent: "ویرایش",
+            cancelButtonContent: "انصراف",
+            saveButtonContent: "بروزرسانی"
+        },
+        sort: {
+            sortDirection: true,
+        },
+        pager: { perPage : 10 },
+        actions:{
+            columnTitle: 'عملیات'
+        },
+        hideHeader: true,
+        noDataMessage: 'هیچ رکوردی برای نمایش وجود ندارد'
     };
 
     data = [

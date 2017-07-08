@@ -1,3 +1,10 @@
 <div class="container-fluid">
     <h1>{{title}}</h1>
+    <hr>
+
+    <div>
+        <input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...' (keyup)='updateFilter($event)' />
+        <ngx-datatable #table class="material" [loadingIndicator]="loadingIndicator" [columnMode]="'force'" [headerHeight]="40" [footerHeight]="40" [limit]="10" [rowHeight]="'auto'" [reorderable]="reorderable" [rows]="rows" [columns]="columns">
+        </ngx-datatable>
+    </div>
 </div>

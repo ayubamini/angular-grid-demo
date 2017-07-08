@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/themes/dark.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
 body {
     font-size: 12pt;
 }
@@ -15,4 +19,17 @@ div .col-md-12 {
 
 .pull-right {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.smart-dt {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+}
+
+#smart {
+    border: 1px solid #000;
+}
+
+#search {
+    margin-bottom: 5px;
 }
