@@ -7,3 +7,12 @@ body {
 div {
     font-size: 12pt;
 }
+
+div .col-md-12 {
+    float: right !important;
+    direction: rtl;
+}
+
+.pull-right {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

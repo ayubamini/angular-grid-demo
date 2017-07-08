@@ -41,9 +41,54 @@ export class SmartTableComponent {
             username: "Antonette",
             email: "Shanna@melissa.tv"
         },
-
-        // ... list of items
-
+        {
+            id: 3,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
+        {
+            id: 4,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
+        {
+            id: 5,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
+        {
+            id: 6,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
+        {
+            id: 7,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
+        {
+            id: 8,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
+        {
+            id: 9,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
+        {
+            id: 10,
+            name: "Ervin Howell",
+            username: "Antonette",
+            email: "Shanna@melissa.tv"
+        },
         {
             id: 11,
             name: "Nicholas DuBuque",
