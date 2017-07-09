@@ -3,8 +3,46 @@
     <hr>
 
     <div>
-        <button kendoButton (click)="onButtonClick()" primary="true">My Kendo UI Button</button>
+        <!--<button kendoButton (click)="onButtonClick()" primary="true">My Kendo UI Button</button>-->
+        <div class="example-config">
+            <label class="k-form-field">
+          <input class="k-checkbox" type="checkbox" id="allowUnsort"
+              [(ngModel)]="allowUnsort" />
+          <label class="k-checkbox-label" for="allowUnsort">
+            {{ allowUnsort ? 'Disable': 'Enable' }} unsorting
+          </label>
+            </label><br/>
+            <label class="k-form-field">
+          <input class="k-checkbox" type="checkbox" id="multiple"              
+              [(ngModel)]="multiple"
+              />
+          <label class="k-checkbox-label" for="multiple">
+            {{ multiple ? 'Disable': 'Enable' }} multiple columns sorting
+          </label>
+            </label>
 
-        <kendo-maskedtextbox mask="mask" value="value"></kendo-maskedtextbox>
+        </div>
+
+        <kendo-grid [data]="gridView" [skip]="skip" [pageable]="true" [pageSize]="pageSize" [sortable]="{
+            allowUnsort: allowUnsort,
+            mode: multiple ? 'multiple' : 'single'
+            }" [sort]="sort" (sortChange)="sortChange($event)" (pageChange)="pageChange($event)" [height]="410">
+            <kendo-grid-column field="ProductID" title="ID" width="40">
+            </kendo-grid-column>
+            <kendo-grid-column field="ProductName" title="Name" width="250">
+            </kendo-grid-column>
+            <kendo-grid-column field="Category.CategoryName" title="Category">
+            </kendo-grid-column>
+            <kendo-grid-column field="UnitPrice" title="Price" width="80">
+            </kendo-grid-column>
+            <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+            </kendo-grid-column>
+            <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                    <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+                </ng-template>
+            </kendo-grid-column>
+        </kendo-grid>
+
     </div>
 </div>
