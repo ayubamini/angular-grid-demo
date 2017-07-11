@@ -1,4 +1,7 @@
-﻿export const sampleProducts = [
+﻿
+import { Product } from '../../app/model/product';
+
+export const PRODUCTS: Product[] = [
     {
         "ProductID": 1,
         "ProductName": "Chai",

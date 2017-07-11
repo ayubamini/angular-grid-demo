@@ -27,7 +27,7 @@
         <kendo-grid [data]="gridView" [skip]="skip" [pageable]="true" [pageSize]="pageSize" [sortable]="{
             allowUnsort: allowUnsort,
             mode: multiple ? 'multiple' : 'single'
-            }" [sort]="sort" (sortChange)="sortChange($event)" (pageChange)="pageChange($event)" [height]="410">
+            }" [sort]="sort" (sortChange)="sortChange($event)" (pageChange)="pageChange($event)" (click)="onSelect(product)" [height]="410">
             <kendo-grid-column field="ProductID" title="ID" width="40">
             </kendo-grid-column>
             <kendo-grid-column field="ProductName" title="Name" width="250">

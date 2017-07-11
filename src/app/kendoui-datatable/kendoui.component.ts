@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
-import { products } from '../../assets/data/products';
+import { Component, OnInit } from '@angular/core';
 import { GridDataResult, PageChangeEvent } from '@progress/kendo-angular-grid';
 import { SortDescriptor, orderBy } from '@progress/kendo-data-query';
 
+// Add Service
+import { Product } from '../model/product'
+import { ProductService } from '../service/product.service'
 
 
 @Component({
     selector: 'app-kendoui-dt',
     templateUrl: `./kendoui.component.html`,
+    providers: [ProductService]
 })
-export class KendouiComponent {
+
+
+export class KendouiComponent implements OnInit {
     title: string = 'Kendo-UI!';
+    selectedProduct: Product;
 
     /* Sorting */
     public multiple: boolean = false;
@@ -25,26 +31,37 @@ export class KendouiComponent {
 
     /* Data */
     private gridView: GridDataResult;
-    private items: any[] = products;
+    private products: any = this.productService.getProducts();
 
-    constructor() {
-        this.loadItems();
+    constructor(private productService: ProductService) {
+
+    }
+
+    ngOnInit(): void {
+        //this.productService.getProductsPromise().then(i => this.items = i);
+        //this.items = this.productService.getProducts();
+        this.loadProductes();
     }
 
     protected sortChange(sort: SortDescriptor[]): void {
         this.sort = sort;
-        this.loadItems();
+        this.loadProductes();
     }
 
     protected pageChange(event: PageChangeEvent): void {
         this.skip = event.skip;
-        this.loadItems();
+        this.loadProductes();
     }
 
-    private loadItems(): void {
+    onSelect(product: Product): void {
+        this.selectedProduct = product;
+    }
+
+    private loadProductes(): void {
+                
         this.gridView = {
-            data: orderBy(this.items.slice(this.skip, this.skip + this.pageSize), this.sort),
-            total: this.items.length
+            data: orderBy(this.products.slice(this.skip, this.skip + this.pageSize), this.sort),
+            total: this.products.length
         };
     }
 
