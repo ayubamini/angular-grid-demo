@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <h1>{{title}}</h1>
+    <hr>
+
+    <paper-datatable data="{{data}}" selectable multi-selection>
+        <paper-datatable-column header="Title" property="title" sortable editable>
+            <template>
+                <paper-input value="{{value}}" no-label-float></paper-input>
+            </template>
+        </paper-datatable-column>
+    </paper-datatable>
+</div>

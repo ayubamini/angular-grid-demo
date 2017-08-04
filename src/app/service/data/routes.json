@@ -1,0 +1,5 @@
+[
+    { "name": "پروفایل من", "path": "/dashboard" },
+    { "name": "مشاهده مشتریان", "path": "/dashboard/members" },
+    { "name": "مشاهده فروشگاه ها", "path": "/dashboard/shops" }
+]

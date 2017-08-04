@@ -3,6 +3,10 @@ import { Injectable } from '@angular/core';
 import { Product } from '../model/product';
 import { PRODUCTS } from '../../assets/data/products';
 
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 
