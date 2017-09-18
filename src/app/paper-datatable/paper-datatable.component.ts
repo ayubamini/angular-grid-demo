@@ -13,21 +13,19 @@ export class PaperDatatableComponent implements OnInit {
     title: string = 'Paper Datatable';
 
     shops: string[];
+    data: any;
 
-    
-    ngOnInit(): void {
-        throw new Error("Method not implemented.");
-    }
-    
+
     // Inject HttpClient into your component or service.
     constructor(private http: HttpClient) { }
 
-    // ngOnInit(): void {
-    //     this.http
-    //         .get<MyJsonData>('/service/data.json', { observe: 'response' })
-    //         .subscribe(resp => {
-    //             console.log(resp.headers.get('X-Custom-Header'));
-    //             console.log(resp.body.someField);
-    //         });
-    // }
+    ngOnInit(): void {
+        this.http
+            .get<any>('/service/data/data.json', { observe: 'response' })
+            .subscribe(resp => {
+                this.data = resp;
+                console.log(resp.headers.get('X-Custom-Header'));
+                console.log(resp.body.someField);
+            });
+    }
 }
