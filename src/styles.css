@@ -9,7 +9,7 @@ body {
 }
 
 div {
-    font-size: 12pt;
+    font-size: 1em;
 }
 
 div .col-md-12 {
@@ -23,7 +23,7 @@ div .col-md-12 {
 
 .smart-dt {
     font-family: 'IRANSans';
-    font-size: 12pt;
+    font-size: 1em;
 }
 
 #smart {

@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-smart-t',
     templateUrl: './smart-table.component.html',
+    styleUrls: ['smart-table.component.scss'],
 })
 
 

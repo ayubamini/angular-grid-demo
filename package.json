@@ -39,6 +39,7 @@
     "font-awesome": "^4.7.0",
     "ng2-smart-table": "^1.2.1",
     "rxjs": "^5.1.0",
+    "vaadin-grid": "^3.0.0",
     "zone.js": "^0.8.16"
   },
   "devDependencies": {
