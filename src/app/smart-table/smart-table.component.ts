@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { LocalDataSource } from 'ng2-smart-table';
 
 
 @Component({
@@ -8,24 +8,36 @@ import { Component } from '@angular/core';
     styleUrls: ['smart-table.component.scss'],
 })
 
-
 export class SmartTableComponent {
     title = 'Smart Table Demo';
+    source: LocalDataSource; // add a property to the component
+
+    constructor() {
+        this.source = new LocalDataSource(this.data); // create the source
+    }
 
     settings = {
-        mode: 'Inline',
+        attr: {
+            class: 'align: right'
+        },
         columns: {
             id: {
-                title: 'شناسه'
+                title: "شناسه",
+                filter: false,
+                editable: false,
+                addable: false
             },
             name: {
-                title: 'نام و نام خانوادگی'
+                title: 'نام و نام خانوادگی',
+                filter: false
             },
             username: {
-                title: 'نام کاربری'
+                title: 'نام کاربری',
+                filter: false
             },
             email: {
-                title: 'ایمیل'
+                title: 'ایمیل',
+                filter: false
             }
         },
         add: {
@@ -34,7 +46,8 @@ export class SmartTableComponent {
             cancelButtonContent: "انصراف"
         },
         delete: {
-            deleteButtonContent: "حذف"
+            deleteButtonContent: "حذف",
+            confirmDelete: true
         },
         edit: {
             editButtonContent: "ویرایش",
@@ -44,77 +57,113 @@ export class SmartTableComponent {
         sort: {
             sortDirection: true,
         },
-        pager: { perPage : 10 },
-        actions:{
-            columnTitle: 'عملیات'
+        pager: {
+            perPage: 10,
+            display: true
         },
-        hideHeader: true,
-        noDataMessage: 'هیچ رکوردی برای نمایش وجود ندارد'
+        actions: {
+            columnTitle: 'عملیات',
+            position: 'right'
+        },
+        filter:{
+            inputClass: ''
+        },
+        mode: 'external',
+        hideHeader: false,
+        hideSubHeader: true,
+        noDataMessage: 'هیچ رکوردی برای نمایش وجود ندارد',
     };
+
+
+
+    onSearch(query: string = '') {
+        this.source.setFilter([
+            // fields we want to include in the search
+            {
+                field: 'id',
+                search: query
+            },
+            {
+                field: 'name',
+                search: query
+            },
+            {
+                field: 'username',
+                search: query
+            },
+            {
+                field: 'email',
+                search: query
+            }
+        ], false);
+        // second parameter specifying whether to perform 'AND' or 'OR' search 
+        // (meaning all columns should contain search query or at least one)
+        // 'AND' by default, so changing to 'OR' by setting false here
+    }
 
     data = [
         {
-            id: 1,
-            name: "Leanne Graham",
-            username: "Bret",
-            email: "Sincere@april.biz"
+            id: '۱',
+            name: "امیر",
+            username: "مولایی",
+            email: "amir.m@april.biz"
         },
         {
-            id: 2,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۲',
+            name: "امیر حسین",
+            username: "قاسمی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 3,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۳',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 4,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۴',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 5,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۵',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 6,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۶',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 7,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۷',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 8,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۸',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 9,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۹',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 10,
-            name: "Ervin Howell",
-            username: "Antonette",
+            id: '۱۰',
+            name: "امیر علی",
+            username: "اسماعیلی",
             email: "Shanna@melissa.tv"
         },
         {
-            id: 11,
+            id: '۱۱',
             name: "Nicholas DuBuque",
             username: "Nicholas.Stanton",
             email: "Rey.Padberg@rosamond.biz"

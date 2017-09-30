@@ -1,78 +1,105 @@
+$table-font-color: #606c71;
+$table-border-color: #e9ebec;
 :host {
-    input,
-    textarea {
-        width: 100%;
-        line-height: normal;
-        padding: .375em .75em;
-    }
-    .ng2-smart-filter {
-        /deep/ {
-            input,
-            select {
-                width: 100%;
-                line-height: normal;
-                padding: .375em .75em;
-                font-weight: normal;
-            }
-            input[type="search"] {
-                box-sizing: inherit;
-            }
-            .completer-dropdown-holder {
-                font-weight: normal;
-            }
-            a {
-                font-weight: normal;
+    /deep/ {
+        table {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: $table-font-color;
+            padding-top: 50px;
+            padding-bottom: 10px;
+            tr {
+                padding-top: 50px;
+                padding-bottom: 10px;
+                td,
+                th {
+                    border: 1px solid $table-border-color;
+                    text-align: right;
+                    text-decoration: none;
+                }
             }
         }
-    }
-    .ng2-smart-pagination {
-        display: inline-flex;
-        font-size: .875em;
-        padding: 0;
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-        .ng2-smart-page-item {
-            display: inline;
-        }
-    }
-    .ng2-smart-row {
-        &.selected {
-            background: rgba(0, 0, 0, 0.05);
-        }
-        .ng2-smart-actions {
-            &.ng2-smart-action-multiple-select {
-                text-align: center;
-            }
-        }
-    }
-    a.sort {
-        &.asc,
-        &.desc {
-            font-weight: bold;
-            &::after {
-                content: '';
-                display: inline-block;
-                width: 0;
-                height: 0;
-                border-bottom: 4px solid rgba(0, 0, 0, 0.3);
-                border-top: 4px solid transparent;
-                border-left: 4px solid transparent;
-                border-right: 4px solid transparent;
-                margin-bottom: 2px;
-            }
-        }
-        &.desc::after {
-            -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-            margin-bottom: -2px;
+        tbody>tr>td:first-child {
+            background-color: #93E5EB;
         }
     }
 }
+
+// :host {
+//     input,
+//     textarea {
+//         width: 100%;
+//         line-height: normal;
+//         padding: .375em .75em;
+//     }
+//     .ng2-smart-filter {
+//         /deep/ {
+//             input,
+//             select {
+//                 width: 100%;
+//                 line-height: normal;
+//                 padding: .375em .75em;
+//                 font-weight: normal;
+//             }
+//             input[type="search"] {
+//                 box-sizing: inherit;
+//             }
+//             .completer-dropdown-holder {
+//                 font-weight: normal;
+//             }
+//             a {
+//                 font-weight: normal;
+//             }
+//         }
+//     }
+//     .ng2-smart-pagination {
+//         display: inline-flex;
+//         font-size: .875em;
+//         padding: 0;
+//         .sr-only {
+//             position: absolute;
+//             width: 1px;
+//             height: 1px;
+//             padding: 0;
+//             margin: -1px;
+//             overflow: hidden;
+//             clip: rect(0, 0, 0, 0);
+//             border: 0;
+//         }
+//         .ng2-smart-page-item {
+//             display: inline;
+//         }
+//     }
+//     .ng2-smart-row {
+//         &.selected {
+//             background: rgba(0, 0, 0, 0.05);
+//         }
+//         .ng2-smart-actions {
+//             &.ng2-smart-action-multiple-select {
+//                 text-align: center;
+//             }
+//         }
+//     }
+//     a.sort {
+//         &.asc,
+//         &.desc {
+//             font-weight: bold;
+//             &::after {
+//                 content: '';
+//                 display: inline-block;
+//                 width: 0;
+//                 height: 0;
+//                 border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+//                 border-top: 4px solid transparent;
+//                 border-left: 4px solid transparent;
+//                 border-right: 4px solid transparent;
+//                 margin-bottom: 2px;
+//             }
+//         }
+//         &.desc::after {
+//             -webkit-transform: rotate(-180deg);
+//             transform: rotate(-180deg);
+//             margin-bottom: -2px;
+//         }
+//     }
+// }

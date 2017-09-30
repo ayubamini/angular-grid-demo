@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
 
@@ -22,6 +23,8 @@ import { AngularDataTableComponent } from './angular-datatable/angular-datatable
 import { KendouiComponent } from './kendoui-datatable/kendoui.component';
 import { HomeComponent } from './home/home.component';
 import { PaperDatatableComponent } from './paper-datatable/paper-datatable.component';
+import { VaadinGridComponent } from './vaadin-grid/vaadin-grid.component';
+
 
 
 @NgModule({
@@ -32,7 +35,8 @@ import { PaperDatatableComponent } from './paper-datatable/paper-datatable.compo
     AngularDataTableComponent,
     KendouiComponent,
     HomeComponent,
-    PaperDatatableComponent
+    PaperDatatableComponent,
+    VaadinGridComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,8 @@ import { PaperDatatableComponent } from './paper-datatable/paper-datatable.compo
       { path: 'ngx-dt', component: NgxDataTableComponent },
       { path: 'angular-dt', component: AngularDataTableComponent },
       { path: 'kendoui-dt', component: KendouiComponent },
-      { path: 'paper-dt', component: PaperDatatableComponent }
+      { path: 'paper-dt', component: PaperDatatableComponent },
+      { path: 'vaadin-grid', component: VaadinGridComponent },
     ]),
   ],
   providers: [{ provide: RTL, useValue: true }],

@@ -4,9 +4,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="smart-dt">
-                <input #search class="search" type="text" placeholder="جستجو...">
-
-                <ng2-smart-table #smart [settings]="settings" [source]="data"></ng2-smart-table>
+                <input #search class="search" type="text" placeholder="جستجو ..." (keydown.enter)="onSearch(search.value)">
+                <ng2-smart-table #smart [settings]="settings" [source]="source"></ng2-smart-table>
             </div>
         </div>
     </div>
